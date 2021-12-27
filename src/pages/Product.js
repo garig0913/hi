@@ -7,6 +7,7 @@ import Slider3 from "../components/Slider/news-slider";
 import News from "../components/Card/news";
 import { Portal } from "@chakra-ui/portal";
 const medee = [<News />, <News />, <News />, <News />, <News />, <News />];
+import Modal from "../components/AboutModal/NewModal";
 
 const Example = () => {
   const Desktop = ({ children }) => {
@@ -30,6 +31,12 @@ const Example = () => {
     return isPortrait ? children : null;
   };
 
+  const [hiddenState, setHidden] = useState(true);
+
+  const onClickHandler = (element) => {
+    setCurrentImage(`${element}`);
+    setHidden(false);
+  };
   const detail = [
     {
       title: "Tooluurin zagvar",
@@ -75,6 +82,7 @@ const Example = () => {
         {" "}
         <>
           <div id="topMargin" className="mx-auto h-96 mb-40">
+            <Modal hiddenOrNot={hiddenState} image={currentImage} />
             <h1 className="text-sm text-blue-500 text-normal ml-2 mb-4">
               BUTEEGDEHUUN-USNII TOOLUUR-ENGIIIN TOOLUUR
             </h1>
@@ -86,7 +94,7 @@ const Example = () => {
                     return (
                       <img
                         className="lg:h-32 md:h-24"
-                        onClick={() => setCurrentImage(data)}
+                        onClick={() => onClickHandler(data)}
                         id="smallImg"
                         src={data}
                         alt="abc"

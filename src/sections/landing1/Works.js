@@ -12,22 +12,29 @@ import News from "../../components/Card/news";
 import Slider from "../../components/Slider";
 import Slider2 from "../../components/Slider/company-slider";
 import Slider3 from "../../components/Slider/news-slider";
+import Partners from "../../components/Slider/PartnerSlider";
 import SocialButton from "../../components/SocialButton/SocialButton";
 import imgHeader from "../../assets/image/webp/head.svg";
 import innerImg from "../../assets/image/png/huree2.png";
 import LogoImg from "../../assets/image/jpg/logo.jpg";
 import { Center } from "@chakra-ui/layout";
-import Partner from "../../components/PartnersSlider/Partner";
 import { backgroundSize, justifyItems, left } from "styled-system";
 import { alignItems } from "styled-system";
 import { ceil } from "lodash";
 const company = [
-  <Companies />,
-  <Companies />,
-  <Companies />,
-  <Companies />,
-  <Companies />,
-  <Companies />,
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
+  "http://amjiltacademy.com/wp-content/uploads/2021/12/tom-amjilt-logo.png",
 ];
 const medee = [<News />, <News />, <News />];
 const cards = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
@@ -195,9 +202,10 @@ const Works = ({ data }) => {
         </div>
       </div>
       <h1 className="news-title">ХАМТЫН АЖИЛЛАГАА </h1>
-      <div className="container">
-        <Slider2 comps={company} length={5} />
+      <div className="w-full flex justify-center bg-white">
+        <Partners comps={company} />
       </div>
+
       <SocialButton />
     </div>
   );
